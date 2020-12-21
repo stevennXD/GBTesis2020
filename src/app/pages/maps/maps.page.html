@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Metro de Quito
+    </ion-title>
+    <ion-avatar class="logo" slot="end">
+      <img src="https://pbs.twimg.com/media/DnjrtDBUYAAGD3N.jpg">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="map"></div>>
+  <ion-slides (ionSlideDidChange)="onSlideDidChange()"> <!--Elemento tarjeta para mostrar la informacion de las paradas-->
+    <ion-slide *ngFor="let marker of markers">
+      <ion-card>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="marker.image">
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">
+            <h2>{{ marker.title }}</h2>
+            <p>{{ marker.text }}</p>
+            <ion-button>Ver más</ion-button>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

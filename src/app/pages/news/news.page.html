@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Noticias Metro de Quito</ion-title>
+    <ion-avatar class="logo" slot="end">
+      <img src="https://pbs.twimg.com/media/DnjrtDBUYAAGD3N.jpg">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="light" *ngFor="let noticia of arrayNoticias; let i=index">
+    <div *ngIf="i<numNoticasref">
+      <ion-card-header>
+        <ion-card-title>{{noticia.title}}</ion-card-title>
+        <br>
+        <ion-img [src]="noticia.image"></ion-img>
+        <ion-label>{{noticia.date | date: 'dd MMM yyyy'}}</ion-label> <!--Se usa angular pipe para dar formato a la fecha-->
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{noticia.content}}
+      </ion-card-content>
+      <ion-item>
+        <ion-card-subtitle>Fuente: {{noticia.source}}</ion-card-subtitle>
+      </ion-item>
+      <ion-item>
+        <ion-button expand="block" fill="outline" color="primary" [href]="noticia.link">Ver más</ion-button>
+      </ion-item>
+    </div>
+  </ion-card>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="mostrarNoticias($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando mas noticias...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
