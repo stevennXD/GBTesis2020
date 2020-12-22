@@ -19,6 +19,44 @@ const routes: Routes = [
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
   },
+  {
+    path: 'transfer-stations',
+    loadChildren: () => import('./pages/transfer-stations/transfer-stations.module').then( m => m.TransferStationsPageModule)
+  },
+  {
+    path: 'lines-quitumbe',
+    loadChildren: () => import('./pages/lines-quitumbe/lines-quitumbe.module').then( m => m.LinesQuitumbePageModule)
+  },
+  {
+    path: 'lines-detail-quitumbe/:id',
+    loadChildren: () => import('./pages/lines-detail-quitumbe/lines-detail-quitumbe.module').then( m => m.LinesDetailQuitumbePageModule)
+  },
+  {
+    path: 'lines-recreo',
+    loadChildren: () => import('./pages/lines-recreo/lines-recreo.module').then( m => m.LinesRecreoPageModule)
+  },
+  {
+    path: 'lines-detail-recreo/:id',
+    loadChildren: () => import('./pages/lines-detail-recreo/lines-detail-recreo.module').then( m => m.LinesDetailRecreoPageModule)
+  },  {
+    path: 'lines-magdalena',
+    loadChildren: () => import('./pages/lines-magdalena/lines-magdalena.module').then( m => m.LinesMagdalenaPageModule)
+  },
+  {
+    path: 'lines-detail-magdalena',
+    loadChildren: () => import('./pages/lines-detail-magdalena/lines-detail-magdalena.module').then( m => m.LinesDetailMagdalenaPageModule)
+  },
+  {
+    path: 'lines-labrador',
+    loadChildren: () => import('./pages/lines-labrador/lines-labrador.module').then( m => m.LinesLabradorPageModule)
+  },
+  {
+    path: 'lines-detail-labrador',
+    loadChildren: () => import('./pages/lines-detail-labrador/lines-detail-labrador.module').then( m => m.LinesDetailLabradorPageModule)
+  },
+
+
+
 ];
 
 @NgModule({

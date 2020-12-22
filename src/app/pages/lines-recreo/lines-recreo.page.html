@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>EL RECREO</ion-title>
+    <ion-title size="small">Buses Integrados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngFor="let linea of lineaList | async" routerLink="/lines-detail-recreo/{{linea.id}}">
+    <ion-icon slot="start" name="bus" color="secondary"></ion-icon>
+    <ion-label>
+      <p>{{ linea.lineaCodigo}}</p>
+      <h2>{{ linea.lineaNombre}}</h2>
+      <p>{{ linea.calleRecorrido }}</p>
+    </ion-label>
+  </ion-item>
+
+</ion-content>

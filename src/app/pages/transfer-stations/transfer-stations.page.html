@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button size="small"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Paradas de Integración
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <!-- CARD DE LA ESTACION QUITUMBE -->
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-card-subtitle>Estación de Transferencia</ion-card-subtitle>
+      <ion-card-title>QUITUMBE</ion-card-title>
+    </ion-card-header>
+
+    <ion-img src='../assets/imgEstaciones/estacionQuitumbe.jpeg'></ion-img>
+  
+    <ion-item>
+      <ion-icon name="map" slot="start"></ion-icon>
+      <ion-label>Ubicación</ion-label>
+      <ion-button fill="outline" slot="end">Ver en mapa</ion-button>
+    </ion-item>
+    <ion-card-content>
+      Esta estación integra los sistemas de transporte:
+      <br>
+      - Troncal Central Trolebús.
+      <br>
+      - Troncal Oriental Ecovía.
+      <br>
+      - Corredor sur Occidental.
+    </ion-card-content>
+
+    <ion-item (click)="navigateToLineasQuitumbe()">
+      <ion-icon name="bus" slot="start" color="success"></ion-icon>
+      <ion-label>Buses Integrados</ion-label>
+    </ion-item>
+
+  </ion-card>
+
+  <!-- CARD DE LA ESTACION El RECREO -->
+
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-card-subtitle>Estación de Transferencia</ion-card-subtitle>
+      <ion-card-title>EL RECREO</ion-card-title>
+    </ion-card-header>
+
+    <ion-img src='../assets/imgEstaciones/estacionRecreo.jpg'></ion-img>
+  
+    <ion-item>
+      <ion-icon name="map" slot="start"></ion-icon>
+      <ion-label>Ubicación</ion-label>
+      <ion-button fill="outline" slot="end">Ver en mapa</ion-button>
+    </ion-item>
+    <ion-card-content>
+      Esta estación integra los sistemas de transporte:
+      <br>
+      - Trolebus.
+      <br>
+      - Ecovía.
+    </ion-card-content>
+
+    <ion-item (click)="navigateToLineasRecreo()">
+      <ion-icon name="bus" slot="start" color="success"></ion-icon>
+      <ion-label>Buses Integrados</ion-label>
+    </ion-item>
+
+  </ion-card>
+
+  <!-- CARD DE LA ESTACION LA MAGDALENA -->
+
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-card-subtitle>Estación de Transferencia</ion-card-subtitle>
+      <ion-card-title>LA MAGDALENA</ion-card-title>
+    </ion-card-header>
+
+    <ion-img src='../assets/imgEstaciones/estacionMagdalena.jpg'></ion-img>
+  
+    <ion-item>
+      <ion-icon name="map" slot="start"></ion-icon>
+      <ion-label>Ubicación</ion-label>
+      <ion-button fill="outline" slot="end">Ver en mapa</ion-button>
+    </ion-item>
+    <ion-card-content>
+      Esta estación integra los sistemas de transporte:
+      <br>
+      - Trolebus.
+      <br>
+      - Ecovía.
+      <br>
+      - Corredor sur Occidental.
+    </ion-card-content>
+
+    <ion-item (click)="navigateToLineasMagdalena()">
+      <ion-icon name="bus" slot="start" color="success"></ion-icon>
+      <ion-label>Buses Integrados</ion-label>
+    </ion-item>
+
+  </ion-card>
+
+  <!-- CARD DE LA ESTACION EL LABRADOR -->
+
+  <ion-card>
+    
+    <ion-card-header>
+      <ion-card-subtitle>Estación de Transferencia</ion-card-subtitle>
+      <ion-card-title>EL LABRADOR</ion-card-title>
+    </ion-card-header>
+
+    <ion-img src='../assets/imgEstaciones/estacionLabrador.jpeg'></ion-img>
+  
+    <ion-item>
+      <ion-icon name="map" slot="start"></ion-icon>
+      <ion-label>Ubicación</ion-label>
+      <ion-button fill="outline" slot="end">Ver en mapa</ion-button>
+    </ion-item>
+    <ion-card-content>
+      Esta estación integra los sistemas de transporte:
+      <br>
+      - Trolebus.
+      <br>
+      - Ecovía.
+    </ion-card-content>
+
+    <ion-item (click)="navigateToLineasLabrador()">
+      <ion-icon name="bus" slot="start" color="success"></ion-icon>
+      <ion-label>Buses Integrados</ion-label>
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>
+
