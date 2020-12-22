@@ -1,22 +1,24 @@
 <ion-content [fullscreen]="true">
   <div class="header">
+
     <ion-toolbar>
       <ion-avatar class="logo-home" slot="start">
-        <img
-          src="https://www.amarun.net/images/FotosNoticias/FotosNoticias2018/04_epnlogo.jpg"
-        />
+        <img src="https://www.amarun.net/images/FotosNoticias/FotosNoticias2018/04_epnlogo.jpg" />
       </ion-avatar>
-      <ion-title class="title"> Metro Quito </ion-title>
+      <ion-title class="title">
+        Metro Quito
+      </ion-title>
       <ion-avatar class="logo-home" slot="end">
         <img src="https://pbs.twimg.com/media/DnjrtDBUYAAGD3N.jpg" />
       </ion-avatar>
     </ion-toolbar>
+    
   </div>
 
   <div id="container">
     <ion-row>
       <ion-col size="6" size-sm>
-        <a href="#"
+        <a href="/transfer-stations"
           ><img
             src="https://i.ibb.co/0CsnvKm/icono-gbtesis-paradas.png"
             alt="rutas"
@@ -45,9 +47,4 @@
       <ion-col size="3" size-sm> </ion-col>
     </ion-row>
   </div>
-
-  <ion-item (click)="navigateToParadas()">
-    <ion-icon name="bus" slot="start" color="success"></ion-icon>
-    <ion-label>Paradas de Transferencia</ion-label>
-  </ion-item>
 </ion-content>
