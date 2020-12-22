@@ -25,3 +25,28 @@
 #container a {
   text-decoration: none;
 }
+
+ion-col {
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+ion-toolbar {
+  padding: 5% 0 5% 0;
+}
+
+.title {
+  font-style: bold;
+  font-size: 190%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.logo-home{
+  margin: 1%;
+}
