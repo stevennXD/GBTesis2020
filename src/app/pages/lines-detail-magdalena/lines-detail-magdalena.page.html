@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button size="small"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ linea?.lineaNombre }}
+    </ion-title>
+    <ion-title size="small">{{ linea?.lineaTroncal }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button color="secondary" size="small">
+        <ion-icon slot="icon-only" name="bus"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item>
+      <ion-icon name="analytics-outline" slot="start"></ion-icon>
+      <ion-label>Ruta</ion-label>
+    </ion-item>
+  
+    <ion-card-content>
+      {{ linea?.calleRecorrido }}
+    </ion-card-content>
+
+    <ion-item>
+      <ion-icon name="timer-outline" slot="start"></ion-icon>
+      <p>Horario Funcionamiento:</p>
+    </ion-item>
+
+    <ion-item>
+      {{ linea?.horarioFuncionamiento }}
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="hourglass" slot="start"></ion-icon>
+      <ion-label>Cada:</ion-label>
+    </ion-item>
+  
+    <ion-card-content>
+      <h4>{{ linea?.lineaIntervalo }} minutos</h4> 
+    </ion-card-content>
+  
+
+    <ion-item>
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label>Paradas:</ion-label>
+    </ion-item>
+  
+    <ion-card-content>
+      {{ linea?.paradasNombre }}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+
