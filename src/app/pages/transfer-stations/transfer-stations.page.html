@@ -1,15 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button size="small"></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      Paradas de Integración
-    </ion-title>
+    <ion-title>Paradas de Integración</ion-title>
+    <ion-avatar class="logo" slot="end">
+      <img src="https://pbs.twimg.com/media/DnjrtDBUYAAGD3N.jpg">
+    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
   
   <!-- CARD DE LA ESTACION QUITUMBE -->
   <ion-card>
@@ -24,7 +25,7 @@
     <ion-item>
       <ion-icon name="map" slot="start"></ion-icon>
       <ion-label>Ubicación</ion-label>
-      <ion-button fill="outline" slot="end">Ver en mapa</ion-button>
+      <ion-button fill="outline" slot="end" (click)="navigateToMapQuitumbe()">Ver en mapa</ion-button>
     </ion-item>
     <ion-card-content>
       Esta estación integra los sistemas de transporte:
@@ -57,7 +58,7 @@
     <ion-item>
       <ion-icon name="map" slot="start"></ion-icon>
       <ion-label>Ubicación</ion-label>
-      <ion-button fill="outline" slot="end">Ver en mapa</ion-button>
+      <ion-button fill="outline" slot="end" (click)="navigateToMapRecreo()">Ver en mapa</ion-button>
     </ion-item>
     <ion-card-content>
       Esta estación integra los sistemas de transporte:
@@ -88,7 +89,7 @@
     <ion-item>
       <ion-icon name="map" slot="start"></ion-icon>
       <ion-label>Ubicación</ion-label>
-      <ion-button fill="outline" slot="end">Ver en mapa</ion-button>
+      <ion-button fill="outline" slot="end" (click)="navigateToMapMagdalena()">Ver en mapa</ion-button>
     </ion-item>
     <ion-card-content>
       Esta estación integra los sistemas de transporte:
@@ -121,7 +122,7 @@
     <ion-item>
       <ion-icon name="map" slot="start"></ion-icon>
       <ion-label>Ubicación</ion-label>
-      <ion-button fill="outline" slot="end">Ver en mapa</ion-button>
+      <ion-button fill="outline" slot="end" (click)="navigateToMapLabrador()">Ver en mapa</ion-button>
     </ion-item>
     <ion-card-content>
       Esta estación integra los sistemas de transporte:

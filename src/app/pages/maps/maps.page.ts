@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MapsServiceService } from "../../services/maps-service.service";
 import { MapsI } from "../../interfaces/maps.interface";
 import { IonSlides, LoadingController } from '@ionic/angular';
+import { ActivatedRoute, Router } from "@angular/router";
 
 declare var google;
 
@@ -15,14 +16,19 @@ export class MapsPage implements OnInit {
   map = null;
   infoWindow = null;
   markers: MapsI[] = [];
+  markerActual = {};
+  lineaID;
 
   @ViewChild(IonSlides) slides: IonSlides;
 
-  constructor(public mapsService: MapsServiceService, private loadingControl: LoadingController) {
+  constructor(public mapsService: MapsServiceService, private loadingControl: LoadingController, private router: Router, private route: ActivatedRoute) {
     this.infoWindow = new google.maps.InfoWindow();
   }
 
   ngOnInit() {
+    const lineaId: string = this.route.snapshot.paramMap.get('id');
+    this.lineaID = lineaId
+
     this.mapsService.getParadas<MapsI>().subscribe(res => {
       for(let marker of res){
         let newMarker = {
@@ -37,8 +43,10 @@ export class MapsPage implements OnInit {
         }
         this.markers.push(newMarker);
       }
+      
       this.loadMap();
     })
+    
   }
 
   async loadMap() {
@@ -51,7 +59,7 @@ export class MapsPage implements OnInit {
     // create map
     this.map = new google.maps.Map(mapEle, {
       center: myLatLng,
-      zoom: 13,
+      zoom: 13.2,
       zoomControl: false,
       streetViewControl: false
     });
@@ -61,6 +69,8 @@ export class MapsPage implements OnInit {
       this.renderMarkers();
       loading.dismiss();
     });
+
+    this.imprimirMarker();
   }
 
   private renderMarkers() {
@@ -90,5 +100,33 @@ export class MapsPage implements OnInit {
     const markerObj = paradaActual.markerObj;
     this.infoWindow.setContent('<div style="color: black;">'+markerObj.title+'</div>');
     this.infoWindow.open(this.map, markerObj);
+  }
+
+  async imprimirMarker() {
+    for(let marker of this.markers){
+      if(marker.title == this.lineaID){
+        this.slides.slideTo(marker.markerIndex);
+        const slideActual = await this.slides.getActiveIndex();
+        const paradaActual = this.markers[slideActual];
+        this.map.panTo({lat: paradaActual.position.lat, lng: paradaActual.position.lng})
+      }
+    }
+  }
+
+  //metodo para navegar a una pagina
+  navigateToLineasQuitumbe(){
+    this.router.navigate(['/lines-quitumbe']);
+  }
+
+  navigateToLineasRecreo(){
+    this.router.navigate(['/lines-recreo']);
+  }
+
+  navigateToLineasMagdalena(){
+    this.router.navigate(['/lines-magdalena']);
+  }
+
+  navigateToLineasLabrador(){
+    this.router.navigate(['/lines-labrador']);
   }
 }

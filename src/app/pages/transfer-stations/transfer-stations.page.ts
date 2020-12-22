@@ -30,5 +30,21 @@ export class TransferStationsPage implements OnInit {
     this.router.navigate(['/lines-labrador']);
   }
 
+  navigateToMapQuitumbe(){
+    this.router.navigate(['/maps/Quitumbe']);
+  }
+  
+  navigateToMapRecreo(){
+    this.router.navigate(['/maps/El Recreo']);
+  }
+
+  navigateToMapMagdalena(){
+    this.router.navigate(['/maps/La Magdalena']);
+  }
+
+  navigateToMapLabrador(){
+    this.router.navigate(['/maps/El Labrador']);
+  }
+
 
 }

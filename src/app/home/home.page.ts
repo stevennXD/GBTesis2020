@@ -11,8 +11,15 @@ export class HomePage {
   constructor(private router: Router) {}
 
    //metodo para navegar a una pagina
-   navigateToParadas(){
+  navigateToRutas(){
     this.router.navigate(['/transfer-stations']);
+  }
+  navigateToMapa(){
+    this.router.navigate(['/maps']);
+  }
+
+  navigateToNoticias(){
+    this.router.navigate(['/news']);
   }
 
 }

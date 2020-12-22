@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/maps/maps.module').then( m => m.MapsPageModule)
   },
   {
+    path: 'maps/:id',
+    loadChildren: () => import('./pages/maps/maps.module').then( m => m.MapsPageModule)
+  },
+  {
     path: 'news',
     loadChildren: () => import('./pages/news/news.module').then( m => m.NewsPageModule)
   },
@@ -38,12 +42,13 @@ const routes: Routes = [
   {
     path: 'lines-detail-recreo/:id',
     loadChildren: () => import('./pages/lines-detail-recreo/lines-detail-recreo.module').then( m => m.LinesDetailRecreoPageModule)
-  },  {
+  },
+  {
     path: 'lines-magdalena',
     loadChildren: () => import('./pages/lines-magdalena/lines-magdalena.module').then( m => m.LinesMagdalenaPageModule)
   },
   {
-    path: 'lines-detail-magdalena',
+    path: 'lines-detail-magdalena/:id',
     loadChildren: () => import('./pages/lines-detail-magdalena/lines-detail-magdalena.module').then( m => m.LinesDetailMagdalenaPageModule)
   },
   {
@@ -51,7 +56,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/lines-labrador/lines-labrador.module').then( m => m.LinesLabradorPageModule)
   },
   {
-    path: 'lines-detail-labrador',
+    path: 'lines-detail-labrador/:id',
     loadChildren: () => import('./pages/lines-detail-labrador/lines-detail-labrador.module').then( m => m.LinesDetailLabradorPageModule)
   },
 
